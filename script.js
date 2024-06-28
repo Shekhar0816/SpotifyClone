@@ -4,7 +4,7 @@ console.log("Welcome to Spotify");
 let songIndex = 0;
 let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
-let myProgressBar = document.getElementById('myProgressBar');
+let myprogress = document.getElementById('myprogress');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
@@ -47,11 +47,11 @@ masterPlay.addEventListener('click', ()=>{
 audioElement.addEventListener('timeupdate', ()=>{ 
     // Update Seekbar
     progress = parseInt((audioElement.currentTime/audioElement.duration)* 100); 
-    myProgressBar.value = progress;
+    myprogress.value = progress;
 })
 
-myProgressBar.addEventListener('change', ()=>{
-    audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+myprogress.addEventListener('change', ()=>{
+    audioElement.currentTime = myprogress.value * audioElement.duration/100;
 })
 
 const makeAllPlays = ()=>{
